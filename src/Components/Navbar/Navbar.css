@@ -1,0 +1,53 @@
+.Navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1.5rem 2rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+}
+
+
+.Navbar h1 span{
+    color:#328fdb;
+}
+
+.Navigation{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navigation i {
+    font-size:2rem;
+    padding-right:1rem;
+}
+
+.Navigation button{
+    padding: .9rem;
+    border-radius: 5px;
+    background: #328fdb;
+    line-height: .3;
+    font-size: .9rem;
+    color: aliceblue;
+    letter-spacing: .1rem;
+    text-align: center;
+    border:none;
+}
+
+@media(max-width: 500px){
+    .Navigation i {
+        font-size:1.5rem;
+        padding-right:.5rem;
+    }
+
+    .Navigation button{
+        padding: .7rem;
+    }
+
+    .Navbar h1{
+        font-size:1.5rem;
+    }
+}
