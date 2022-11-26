@@ -1,6 +1,28 @@
 import './Form.css'
+import { QuizModel } from '../../DataModel/quiz';
+import React, { useEffect, useState } from 'react';
 
 function Form(){
+
+      let [level,setLevel] = useState('easy');
+      let [categoryList,setCategoryList] = useState<string[]> ([]);
+
+
+        useEffect(()=>{
+            let currCategoryList= QuizModel.filter((item)=>(
+                item.quizCategory === level))
+                .map((item)=>(item.quizName));
+        setCategoryList(currCategoryList);
+        },[level])
+
+    
+
+     const selectLevelHandler = (e: React.MouseEvent<HTMLSelectElement> ) =>{
+         let currLevel = (e.target as HTMLSelectElement).value
+         setLevel(currLevel);  
+     }
+
+
     return(
         <div className='form-sec'>
             <div className='form-content'>
@@ -9,19 +31,19 @@ function Form(){
 
            <div>
             <label >Select Difficulty</label>
-             <select className="level">
+             <select className="level" defaultValue="" onClick={selectLevelHandler}>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
-                 <option value="difficult">Difficult</option>
+                <option value="hard">Hard</option>
              </select>
             </div>
 
             <div>
              <label >Select Category</label>
-             <select className="category">
-                <option value="easy">html</option>
-                <option value="medium">css</option>
-                 <option value="difficult">react</option>
+             <select className="category" >
+                {categoryList.map((item) => (
+                    <option value={item} key={item} >{item}</option>
+                ))}
              </select>
              </div>
 

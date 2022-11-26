@@ -41,7 +41,7 @@
 }
 
 .form-content button{
-    padding: .8rem;
+    padding: .9rem;
     border-radius: 5px;
     background: #328fdb;
     line-height: .3;
@@ -50,7 +50,7 @@
     letter-spacing: .1rem;
     text-align: center;
     border:none;
-    width:30vw;
+    width:7rem;
     margin:2rem 0rem 1rem 0rem;
 }
 
@@ -61,8 +61,8 @@
     .form-content div select{
         width:60vw;
     }
-
-    
-.form-content button{
-    width:60vw;}
 }
+    
+/* .form-content button{
+    width:60vw;}
+} */
