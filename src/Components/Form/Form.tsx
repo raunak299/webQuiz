@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 function Form(){
 
-      let [level,setLevel] = useState('easy');
+      let [level,setLevel] = useState(QuizModel[0].quizCategory);
       let [categoryList,setCategoryList] = useState<string[]> ([]);
-      let [category,setCategory] = useState(categoryList[0]);
+      let [category,setCategory] = useState(QuizModel[0].quizName);
       let [contestId,setContestId] = useState('');
 
 
