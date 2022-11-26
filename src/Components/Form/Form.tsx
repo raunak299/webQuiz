@@ -1,11 +1,14 @@
 import './Form.css'
 import { QuizModel } from '../../DataModel/quiz';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Form(){
 
       let [level,setLevel] = useState('easy');
       let [categoryList,setCategoryList] = useState<string[]> ([]);
+      let [category,setCategory] = useState(categoryList[0]);
+      let [contestId,setContestId] = useState('');
 
 
         useEffect(()=>{
@@ -13,13 +16,25 @@ function Form(){
                 item.quizCategory === level))
                 .map((item)=>(item.quizName));
         setCategoryList(currCategoryList);
+        setCategory(currCategoryList[0]);
         },[level])
+
+        useEffect(()=>{
+            let [tempId]=  QuizModel.filter((item)=>(item.quizName===category && item.quizCategory===level))
+            .map((item)=>(item.quizId));
+            setContestId(tempId);
+        },[category,level])
 
     
 
      const selectLevelHandler = (e: React.MouseEvent<HTMLSelectElement> ) =>{
          let currLevel = (e.target as HTMLSelectElement).value
          setLevel(currLevel);  
+     }
+
+     const categorySelectorHandler = (e: React.MouseEvent<HTMLSelectElement>) =>{
+        let currCategory = (e.target as HTMLSelectElement).value;
+        setCategory(currCategory);   
      }
 
 
@@ -40,14 +55,16 @@ function Form(){
 
             <div>
              <label >Select Category</label>
-             <select className="category" >
+             <select className="category" onClick={categorySelectorHandler}>
                 {categoryList.map((item) => (
                     <option value={item} key={item} >{item}</option>
                 ))}
              </select>
              </div>
-
-             <button>Start</button>
+             <Link to={`contest/${contestId}`}>
+                <button>Start</button>
+             </Link>
+          
              </div>
         </div>
     );

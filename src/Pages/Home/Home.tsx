@@ -1,6 +1,6 @@
 
-import Form from '../Components/Form/Form';
-import Navbar from '../Components/Navbar/Navbar';
+import Form from '../../Components/Form/Form';
+import Navbar from '../../Components/Navbar/Navbar';
 import './Home.css'
 
 function Home(){
