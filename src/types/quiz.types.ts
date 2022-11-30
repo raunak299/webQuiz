@@ -17,3 +17,9 @@ export type QuizModelType = {
     value: string;
     isRight: boolean;
   };
+
+  export type resultType ={
+    question:string,
+    response:string,
+    score: number,
+  }
