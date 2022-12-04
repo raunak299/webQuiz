@@ -47,7 +47,7 @@ color: #252f38;
 letter-spacing: .1rem;
 text-align: center;
 border:none;
-min-width:40vw;
+min-width:30vw;
 margin:2rem 0rem 1rem 0rem;
 /* buttonst-style-type: none; */
 }
@@ -64,8 +64,36 @@ color: white;
 letter-spacing: .1rem;
 text-align: center;
 border:none;
-min-width:40vw;
+min-width:30vw;
 margin:2rem 0rem 1rem 0rem;
+}
+
+.wrong-ans{
+    background: rgb(209, 27, 27);
+ padding: .5rem;
+border-radius: 5px;
+font-size: .9rem;
+color: white;
+letter-spacing: .1rem;
+text-align: center;
+border:none;
+min-width:30vw;
+margin:2rem 0rem 1rem 0rem;
+}
+
+.not-answer-icon{
+    color:#ffb100;
+    padding-right: .8rem;
+}
+
+.right-icon{
+    color:rgb(83, 199, 87);
+    padding-right: .8rem;
+}
+
+.wrong-icon{
+    color:rgb(209, 27, 27);
+    padding-right: .8rem;
 }
 
 .navigate{

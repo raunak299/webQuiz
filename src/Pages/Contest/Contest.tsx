@@ -8,7 +8,7 @@ import resultContext from "../../Store/resultContext";
 
 function Contest(){
 
-    const {resultHandler} = useContext(resultContext);
+    const {result,resultHandler} = useContext(resultContext);
 
     const [activeOption,setActiveOption]= useState("");
     
@@ -23,9 +23,16 @@ function Contest(){
     const history = useHistory();
 
     const nextQuesHandler = (e : React.MouseEvent<HTMLButtonElement>) =>{
-        console.log(quesNo+1);
+         if(result.filter((item)=>(item.question === question)).length=== 0){
+            resultHandler({
+                question,
+                response:'',
+                score:0,
+            });
+         }
+        // console.log(quesNo+1);
         if(quesNo === quesData.length-1){
-            history.push(`/result/${contestId}`);
+            history.replace(`/result/${contestId}`);
         }
        setQuesNo(quesNo +1);
     }
@@ -41,7 +48,7 @@ function Contest(){
       let resultData : resultType  = {
         question,
         response:ans.value,
-        score:ans.isRight && quesData[quesNo]?.point || 0
+        score: (ans.isRight && quesData[quesNo]?.point) || 0
       }
       resultHandler(resultData);
    } 
