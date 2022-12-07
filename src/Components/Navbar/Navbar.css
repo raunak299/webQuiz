@@ -7,8 +7,14 @@
     top: 0px;
     left: 0px;
     width:100%;
+    
 }
 
+
+.Navbar a{
+    color:black;
+    text-decoration: none;
+}
 
 .Navbar h1 span{
     color:#328fdb;
@@ -23,6 +29,7 @@
 .Navigation i {
     font-size:2rem;
     padding-right:1rem;
+    color:black;
 }
 
 .Navigation button{

@@ -1,0 +1,60 @@
+.profile-section {
+    margin: 0 2rem 0rem 2rem;
+    color: #243a52;
+    letter-spacing: .1rem;
+    min-height: 100vh;
+    margin-top: 3.3rem
+}
+
+
+.profile-sec-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile-sec-heading {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-top: 0;
+    padding-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.profile-tabs {
+    display: flex;
+    align-items: center;
+}
+
+.profile-tabs h2 {
+    margin-right: .8rem;
+    margin-left: .8rem;
+    font-size: 1.3rem;
+    line-height: 1rem;
+    padding-bottom: .5rem;
+    font-weight: 480;
+    background: white;
+
+}
+
+.active {
+    border-bottom-style: solid;
+    border-color: #328fdb;
+    border-width: .2rem;
+}
+
+.profile-tab-contents {
+    margin: 2rem 0;
+}
+
+@media(min-width:400px) {
+    .profile-sec-heading {
+        font-size: 3rem;
+    }
+
+    .pprofile-section {
+        margin: 0 4rem 0rem 4rem;
+    }
+
+}

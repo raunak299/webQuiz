@@ -1,0 +1,100 @@
+.auth-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f8;
+    cursor: pointer;
+}
+
+.auth-modal{
+    min-width:180px;
+    padding:1rem;
+    background: white;
+    border-radius: .8rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-style: solid;
+    border-width: 6px;
+    border-color: #328fdb;
+}
+
+.auth-modal h2{
+    padding-bottom:1rem;
+    color: #0f2331;
+
+
+    /* font-weight: 500; */
+}
+
+.input-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    padding-bottom:1rem;
+   
+}
+
+
+.input-container label {
+    color:#324d67;
+    font-weight: 500;
+    padding-bottom: .3rem;
+}
+
+.input-container input{
+padding:.3rem;
+width:30vw;
+background:#f1f5f8;
+border-radius:.3rem;
+border-style: none;
+}
+
+.auth-btn-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+.auth-modal button{
+    padding: .9rem;
+    border-radius: 5px;
+    background: #328fdb;
+    line-height: .3;
+    font-size: .9rem;
+    color: aliceblue;
+    letter-spacing: .1rem;
+    text-align: center;
+    border:none;
+    width:7rem;
+    margin:1rem 1rem 1rem 0rem;
+}
+
+.auth-modal button:hover{
+    background: #104e7a;
+}
+
+.auth-modal button:nth-child(2){
+    background: #a9d9fe;
+    color:#102a42;
+}
+
+.auth-modal button:nth-child(2):hover{
+    background: #104e7a;
+    color:white
+}
+
+
+.auth-toggle{
+    padding-top: .5rem;
+}
+
+.auth-toggle span{
+    color:#328fdb;
+    font-weight: bold;
+}

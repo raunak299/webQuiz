@@ -4,14 +4,21 @@ import { useHistory, useParams} from 'react-router-dom';
 import { QuizModel } from '../../DataModel/quiz.model';
 import resultContext from '../../Store/resultContext';
 import { Link } from 'react-router-dom';
-import { resultType } from '../../types/quiz.types';
+import { userCollectionRef } from '../../firebase';
+import { db } from '../../firebase';
+import {addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc} from 'firebase/firestore'
+import { AuthContext } from '../../Store/AuthContext';
+import userEvent from '@testing-library/user-event';
 
 
 function Result(){
 
     const {result} = useContext(resultContext);
+    const {userId}= useContext(AuthContext);
     let length=result.length;
     let history=useHistory();
+
+     const userCollectionRef =collection(db,'score');
     // console.log(result);
 
       if(length===0){
@@ -23,14 +30,37 @@ function Result(){
     
     let params = useParams<{contestId:string}>();
     let contestId = params.contestId;
+    let contestName='';
     let [quesData] = QuizModel.filter((item)=>(item.quizId === contestId))
-                   .map((item)=>(item.questions));
+                   .map((item)=>{
+                    contestName=item.quizName;
+                    return (item.questions)});
+    let totalScore:number=0;
+     result.forEach((item)=>{
+             totalScore+=item.score;
+            // console.log(totalScore);
+       });
 
-    let totalScore=0;
-    result.forEach((item)=>{
-      totalScore+=item.score;
-      console.log(totalScore);
-    });
+  
+
+      useEffect(()=>{ 
+
+         try{ 
+          const addResult=async()=>{
+            const document= await getDoc(doc(userCollectionRef, userId));
+           let currData =document.data()?.data;
+           console.log(currData);
+           let newData= currData ? [...currData,{totalScore,contestName}] : [{totalScore,contestName}];
+            let ref =await updateDoc(doc(userCollectionRef, userId),  {data: newData}); }
+            addResult();
+          }
+          
+          catch(error){
+              console.log(error);
+            }
+       
+      },[totalScore,userId,userCollectionRef])
+  
 
 
 

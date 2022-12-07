@@ -1,0 +1,59 @@
+.profile-info-sec {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.profile-info-sec div svg {
+    color: #328fdb;
+    font-size: .8rem;
+    padding-right: 1rem;
+}
+
+.profile-info-sec div {
+    padding: .5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.profile-info-sec div button {
+    padding: .9rem;
+    border-radius: 5px;
+    background: #328fdb;
+    line-height: .3;
+    font-size: .9rem;
+    color: aliceblue;
+    border-style: none;
+    width: 6rem;
+    letter-spacing: .1rem;
+}
+
+.profile-info-sec div:nth-child(3) {
+    padding-left: 1.5rem;
+}
+
+.profile-info-sec div button:hover {
+    background: rgb(229, 88, 88);
+}
+
+.profile-data {
+    color: #617d98;
+    display: block;
+    /* padding-left: 1rem; */
+}
+
+
+@media(min-width:540px) {
+
+    .profile-info-sec div {
+        font-size: 1.2rem;
+        /* padding-left:0rem; */
+    }
+
+    .profile-data {
+        display: inline;
+        padding-left: 0px;
+    }
+
+
+}
