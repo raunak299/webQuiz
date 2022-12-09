@@ -7,7 +7,9 @@
     top: 0px;
     left: 0px;
     width:100%;
-    
+    z-index:10;
+    background:#f1f5f8;
+    padding:2.5rem;
 }
 
 
@@ -16,6 +18,10 @@
     text-decoration: none;
 }
 
+
+.Navbar h1{
+    font-size:3rem;
+}
 .Navbar h1 span{
     color:#328fdb;
 }
@@ -27,17 +33,17 @@
 }
 
 .Navigation i {
-    font-size:2rem;
-    padding-right:1rem;
+    font-size:2.7rem;
+    padding-right:1.3rem;
     color:black;
 }
 
 .Navigation button{
-    padding: .9rem;
+    padding: 1rem;
     border-radius: 5px;
     background: #328fdb;
     line-height: .3;
-    font-size: .9rem;
+    font-size: 1.5rem;
     color: aliceblue;
     letter-spacing: .1rem;
     text-align: center;
@@ -45,6 +51,10 @@
 }
 
 @media(max-width: 500px){
+
+    .Navbar{
+        padding:1rem;
+    }
     .Navigation i {
         font-size:1.5rem;
         padding-right:.5rem;
@@ -52,9 +62,10 @@
 
     .Navigation button{
         padding: .7rem;
+        font-size:1rem;
     }
 
     .Navbar h1{
-        font-size:1.5rem;
+        font-size:2rem;
     }
 }

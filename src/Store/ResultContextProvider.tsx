@@ -22,11 +22,17 @@ const ResultContextProvider:React.FC <{ children: React.ReactNode }>=(props) => 
         setResult(tempResult);
     }
 
+     const resetResultData = ()=>{
+      setResult([]);
+     }
+
   const currentValue : {
     result : resultType[],
+    resetResultData : ()=> void,
     resultHandler : (resultData:resultType) => void }
     = {
       result,
+      resetResultData,
       resultHandler }
 
   return (<resultContext.Provider value={currentValue}>

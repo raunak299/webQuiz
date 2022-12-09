@@ -8,7 +8,7 @@ import resultContext from "../../Store/resultContext";
 
 function Contest(){
 
-    const {result,resultHandler} = useContext(resultContext);
+    const {result,resultHandler,resetResultData} = useContext(resultContext);
 
     const [activeOption,setActiveOption]= useState("");
     
@@ -34,6 +34,7 @@ function Contest(){
         if(quesNo === quesData.length-1){
             history.replace(`/result/${contestId}`);
         }
+        setActiveOption('');
        setQuesNo(quesNo +1);
     }
 
@@ -44,14 +45,20 @@ function Contest(){
       let [ans] = options.filter((option)=>(option.value === ansValue));
     //   console.log(ans);      
       setActiveOption(ansValue);
-      console.log(activeOption);
+    //   console.log(activeOption);
       let resultData : resultType  = {
         question,
         response:ans.value,
         score: (ans.isRight && quesData[quesNo]?.point) || 0
       }
       resultHandler(resultData);
-   } 
+   }
+   
+
+   const returnHomeHandler = ()=>{
+    resetResultData();
+    history.replace('/home');
+  }
 
     
  
@@ -69,7 +76,7 @@ function Contest(){
             </ul>
         
         <div className="question-navigation">
-            <button>Quit </button>
+            <button onClick={returnHomeHandler}>Quit </button>
             <button onClick={nextQuesHandler}>Next </button>
         </div>
         </div>

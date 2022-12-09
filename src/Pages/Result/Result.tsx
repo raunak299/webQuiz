@@ -1,20 +1,19 @@
 import styles from './Result.module.css'
-import  React, { useContext, useEffect } from 'react';
+import   { useContext, useEffect } from 'react';
 import { useHistory, useParams} from 'react-router-dom';
 import { QuizModel } from '../../DataModel/quiz.model';
 import resultContext from '../../Store/resultContext';
-import { Link } from 'react-router-dom';
-import { userCollectionRef } from '../../firebase';
 import { db } from '../../firebase';
-import {addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc} from 'firebase/firestore'
+import {  collection, doc, getDoc, setDoc} from 'firebase/firestore'
 import { AuthContext } from '../../Store/AuthContext';
-import userEvent from '@testing-library/user-event';
+
 
 
 function Result(){
 
-    const {result} = useContext(resultContext);
+    const {result,resetResultData} = useContext(resultContext);
     const {userId}= useContext(AuthContext);
+    // console.log(userId);
     let length=result.length;
     let history=useHistory();
 
@@ -36,9 +35,10 @@ function Result(){
                     contestName=item.quizName;
                     return (item.questions)});
     let totalScore:number=0;
+    console.log(totalScore)
      result.forEach((item)=>{
              totalScore+=item.score;
-            // console.log(totalScore);
+            console.log(totalScore);
        });
 
   
@@ -47,11 +47,18 @@ function Result(){
 
          try{ 
           const addResult=async()=>{
-            const document= await getDoc(doc(userCollectionRef, userId));
+          const document= await getDoc(doc(userCollectionRef, userId));
            let currData =document.data()?.data;
-           console.log(currData);
-           let newData= currData ? [...currData,{totalScore,contestName}] : [{totalScore,contestName}];
-            let ref =await updateDoc(doc(userCollectionRef, userId),  {data: newData}); }
+         let newData= currData ? [...currData,{totalScore,contestName}] : [{totalScore,contestName}];
+          newData.sort((a,b) =>(
+            b.totalScore- a.totalScore
+          ))  
+          if(newData.length === 11) {
+               newData.pop();
+            }
+        
+            let ref =await setDoc(doc(userCollectionRef, userId),  {data: newData}); 
+          console.log(ref);}
             addResult();
           }
           
@@ -59,7 +66,13 @@ function Result(){
               console.log(error);
             }
        
-      },[totalScore,userId,userCollectionRef])
+      },[totalScore,userId,userCollectionRef,contestName]);
+
+
+      const returnHomeHandler = ()=>{
+        resetResultData();
+        history.replace('/home');
+      }
   
 
 
@@ -105,9 +118,9 @@ function Result(){
             
              </div>
        
-            <Link to='/home'>
-             <button className={styles['navigate']}>Home </button>
-            </Link>
+            {/* <Link to='/home'> */}
+             <button className={styles['navigate']} onClick={returnHomeHandler}>Home </button>
+            {/* </Link> */}
            
         </div>
     );

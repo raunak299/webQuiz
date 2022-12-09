@@ -11,9 +11,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    min-width:40vw;
 }
 
 .form-content h1{
+    font-size: 2.5rem;
     padding-bottom:2rem;
 }
 
@@ -29,23 +31,25 @@
 .form-content div label {
     color:#324d67;
     font-weight: 500;
+    font-size:1.2rem;
     padding-bottom: .3rem;
 }
 
 .form-content div select{
-    padding:.3rem;
-    width:30vw;
+    padding:.5rem;
+    width:35vw;
+    font-size: 1rem;
     background:#f1f5f8;
     border-radius:.3rem;
     border-color:#f1f5f8 ;
 }
 
 .form-content button{
-    padding: .9rem;
+    padding: 1rem;
     border-radius: 5px;
     background: #328fdb;
     line-height: .3;
-    font-size: .9rem;
+    font-size: 1.2rem;
     color: aliceblue;
     letter-spacing: .1rem;
     text-align: center;

@@ -3,9 +3,11 @@ import React from "react";
 
 const resultContext = React.createContext<{
     result : resultType[],
+    resetResultData : ()=> void,
     resultHandler : (resultData:resultType)=> void }>
     ({ result : [{question:'', response:'', score: 0}],
-       resultHandler : (data)=>{}
-     });
+       resultHandler : (data)=>{},
+       resetResultData:()=>{},
+     }); 
 
 export default resultContext;

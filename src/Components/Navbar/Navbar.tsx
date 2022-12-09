@@ -15,7 +15,9 @@ function Navbar(){
         </Link>
         <div className="Navigation">
         <i className="fa-solid fa-moon"></i>
+        <Link to='dashboard'>
         <i className="fa-solid fa-trophy"></i>
+        </Link>
          {!authContx.token && 
         <Link to='/authentication'>  <button>Login</button> 
           </Link>}

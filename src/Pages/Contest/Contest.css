@@ -22,6 +22,7 @@
 
 .question-sec h2{
     padding-top:2rem;
+    font-size:2rem;
     text-align: center;
 }
 
@@ -37,12 +38,13 @@
     border-radius: 5px;
     background:  #8bcbf9;
     /* buttonne-height: .3; */
-    font-size: .9rem;
+    font-size: 1.2rem;
     color: #252f38;
     letter-spacing: .1rem;
     text-align: center;
     border:none;
     min-width:40vw;
+    width:100%;
     margin:2rem 0rem 1rem 0rem;
     /* buttonst-style-type: none; */
 }
@@ -59,12 +61,12 @@
 }
 
 .question-navigation button{
-    padding: .7rem;
+    padding: .9rem;
     border-radius: 5px;
     background:#ffb100;
     color:#252f38;
     line-height: .3;
-    font-size: .9rem;
+    font-size: 1.2rem;
     font-weight:600;
     letter-spacing: .1rem;
     text-align: center;

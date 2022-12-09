@@ -8,9 +8,14 @@ import Result from './Pages/Result/Result';
 import Authentication from './Pages/Authentication/Authentication';
 import Profile from './Pages/Profile/Profile';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import { AuthContext } from './Store/AuthContext';
 
 
 function App() {
+
+  let authContx = useContext(AuthContext);
+  let login = authContx.token;
 
   return (
     <React.Fragment>
@@ -40,12 +45,20 @@ function App() {
       </Route>
 
       <Route path='/authentication' exact>
-        <Authentication/> 
+        {login && <Redirect to='/profile' />}
+        {!login && <Authentication/>  }
       </Route>
 
       <Route path='/profile'>
       <PrivateRoute>
         <Profile />
+        </PrivateRoute>
+      </Route>
+
+      
+      <Route path='/dashboard'>
+      <PrivateRoute>
+        <Dashboard />
         </PrivateRoute>
       </Route>
   

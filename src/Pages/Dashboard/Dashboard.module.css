@@ -1,0 +1,41 @@
+.dashboard-page{
+    min-height:100vh;
+    background:#f1f5f8;
+}
+
+.dashboard-sec{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 10rem 1rem;
+}
+
+.dashboard-sec h1{
+    padding-bottom: 3rem;
+}
+
+
+.dashboard-sec h2{
+    padding: 10rem 0rem;
+    font-size:2rem;
+    color:#324d67;
+}
+
+.scores-sec{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width:80vw;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.scores-sec div{
+    color:#324d67;
+    font-weight: 500;
+    font-size:1.4rem;
+ 
+}
