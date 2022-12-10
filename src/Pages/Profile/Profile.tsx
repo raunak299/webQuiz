@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-import { AuthContext } from "../../Store/AuthContext";
+// import { AuthContext } from "../../Store/AuthContext";
 import styles from './Profile.module.css'
 import ProfileInfo from "./ProfileInfo";
 
 
 function Profile(){
-  const authContx= useContext(AuthContext);
+//   const authContx= useContext(AuthContext);
     return(
         <React.Fragment>
         <Navbar />
