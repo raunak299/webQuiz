@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import ResultContextProvider from './Store/ResultContextProvider';
 import { AuthContextProvider } from './Store/AuthContext';
+import ThemeContextProvider from './Store/ThemeContextprovider';
 
 
 const root = ReactDOM.createRoot(
@@ -11,11 +12,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <BrowserRouter>
+  <ThemeContextProvider>
   <AuthContextProvider>
   <ResultContextProvider>
     <App />
   </ResultContextProvider>
   </AuthContextProvider>
+  </ThemeContextProvider>
   </BrowserRouter>
 );
 

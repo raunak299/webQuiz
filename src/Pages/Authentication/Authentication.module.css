@@ -4,14 +4,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #f1f5f8;
+    background: var(--main-background-color);
     cursor: pointer;
 }
 
 .auth-modal{
     width:20rem;
     padding:1rem;
-    background: white;
+    background: var(--third-background-color);
     border-radius: .8rem;
     display:flex;
     flex-direction: column;
@@ -19,12 +19,13 @@
     align-items: center;
     border-top-style: solid;
     border-width: 6px;
-    border-color: #328fdb;
+    border-color: var(--main-theme-color);
+    box-shadow:  0 5px 15px #294455;
 }
 
 .auth-modal h2{
     padding-bottom:1rem;
-    color: #0f2331;
+    color: var(--first-text-color);
      font-size: 2rem;
 
     /* font-weight: 500; */
@@ -41,7 +42,7 @@
 
 
 .input-container label {
-    color:#324d67;
+    color:var(--second-text-color);
     font-weight: 500;
     padding-bottom: .3rem;
     font-size: 1.2rem;
@@ -51,7 +52,8 @@
 padding:.5rem;
 width:15rem;
 /* min-width:25rem; */
-background:#f1f5f8;
+background:var(--secondary-background-color);
+color:  black;
 border-radius:.3rem;
 border-style: none;
 font-size: 1rem;
@@ -67,10 +69,10 @@ font-size: 1rem;
 .auth-modal button{
     padding: 1rem;
     border-radius: 5px;
-    background: #328fdb;
+    background: var(--main-theme-color);;
     line-height: .3;
     font-size: 1.2rem;
-    color: aliceblue;
+    color: var(--third-text-color);
     letter-spacing: .1rem;
     text-align: center;
     border:none;
@@ -84,22 +86,23 @@ font-size: 1rem;
 
 .auth-modal button:nth-child(2){
     background: #a9d9fe;
-    color:#102a42;
+    color:black
 }
 
 .auth-modal button:nth-child(2):hover{
     background: #104e7a;
-    color:white
+    color:var(--third-text-color);
 }
 
 
 .auth-toggle{
     padding-top: .5rem;
     font-size: 1.2rem;
+    color:var(--first-text-color);
 }
 
 .auth-toggle span{
-    color:#328fdb;
+    color:var(--main-theme-color);
     font-weight: bold;
 }
 

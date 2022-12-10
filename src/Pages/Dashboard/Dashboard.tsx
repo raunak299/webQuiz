@@ -8,9 +8,10 @@ import { AuthContext } from '../../Store/AuthContext';
 
 
 
+
 function Dashboard(){
 
-    const userCollectionRef =collection(db,'score');
+
     const {userId}= useContext(AuthContext);
     const [loading,setLoading]= useState(false);
 
@@ -19,8 +20,8 @@ function Dashboard(){
       useEffect(()=>{ 
        
         const getResult=async()=>{
-            const document= await getDoc(doc(userCollectionRef, userId));
-            console.log(document.data()?.data);
+            const document= await getDoc(doc( collection(db,'score'), userId));
+            // console.log(document.data()?.data);
          setDashboardData(document.data()?.data);}
         // console.log(dashboardData)}
 
@@ -30,7 +31,7 @@ function Dashboard(){
         catch(error){
                 console.log(error); }
         setLoading(false);
-      },[userCollectionRef,userId])
+      },[userId])
 
     return(
         <div className={styles['dashboard-page']}>
@@ -39,8 +40,8 @@ function Dashboard(){
           {!loading && <div className={styles['dashboard-sec']}>
              {!dashboardData && <h2>Attempt a test to get scores !!</h2>}
              {dashboardData && <h1>Top 10 Scores</h1>}
-             {dashboardData && dashboardData.map((item)=>(
-                       <div className={styles['scores-sec']}>
+             {dashboardData && dashboardData.map((item,index)=>(
+                       <div className={styles['scores-sec']} key={index}>
                        <React.Fragment>
                        <div>{item.contestName}</div>
                        <div>{item.totalScore}</div>

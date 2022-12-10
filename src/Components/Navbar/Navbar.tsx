@@ -1,12 +1,22 @@
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Store/AuthContext';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import ThemeContext from '../../Store/ThemeContext';
 
 function Navbar(){
 
   const authContx=useContext(AuthContext);
+  const {theme,themeHandler}= useContext(ThemeContext);
+
+   const toggleTheme= ()=>{
+     themeHandler();
+   }
+
+  useEffect(()=>{
+    document.body.className=theme;
+  },[theme] )
 
   return(
     <div className="Navbar">
@@ -14,7 +24,8 @@ function Navbar(){
         <h1>Web<span>Quiz</span></h1>
         </Link>
         <div className="Navigation">
-        <i className="fa-solid fa-moon"></i>
+        {theme==='dark-theme' && <i className="fa-solid fa-sun" onClick={toggleTheme}></i> }
+        {theme==='light-theme' && <i className="fa-solid fa-moon" onClick={toggleTheme}></i> }
         <Link to='dashboard'>
         <i className="fa-solid fa-trophy"></i>
         </Link>

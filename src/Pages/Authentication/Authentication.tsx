@@ -1,9 +1,9 @@
 import Navbar from '../../Components/Navbar/Navbar';
 import styles from './Authentication.module.css';
-import React, {useState,useRef, useContext, useEffect} from "react";
+import React, {useState,useRef, useContext} from "react";
 // import { AuthErrorCodes } from 'firebase/auth';
 import { AuthContext } from '../../Store/AuthContext';
-import { useHistory, useLocation } from 'react-router-dom';
+// import { useHistory, useLocation } from 'react-router-dom';
 
 
 function Authentication(){
@@ -40,10 +40,7 @@ function Authentication(){
     const testUserHandler = (e:React.MouseEvent<HTMLButtonElement>)=>{
         let email='test123@test.com';
         let password='testuser123';
-        if(!signIn){
-            authContx.signup(email,password); }
-        else if(signIn){
-            authContx.login(email, password)}
+            authContx.login(email, password)
     }
 
 

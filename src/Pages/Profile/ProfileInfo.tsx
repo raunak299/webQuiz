@@ -12,7 +12,7 @@ function ProfileInfo() {
 
 
     const logoutHandler = () => {
-        console.log(authContx.user);
+        // console.log(authContx.user);
         authContx.logout();
         localStorage.removeItem('loginItems');
         

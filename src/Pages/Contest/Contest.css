@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height:100vh;
-    background: #f1f5f8;
+    background: var(--main-background-color);
     cursor: pointer;
 }
 
@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items:center;
-    background: white;
+    background:(--third-background-color);
     border-radius: 7px;
 }
 
@@ -24,6 +24,7 @@
     padding-top:2rem;
     font-size:2rem;
     text-align: center;
+    color:var(--first-text-color)
 }
 
 .question-sec ul{

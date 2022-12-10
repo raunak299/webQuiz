@@ -18,3 +18,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.dark-theme{
+  --main-theme-color:#328fdb;
+  --main-background-color:black;
+  --secondary-background-color:whitesmoke;
+  --third-background-color:#0d131a;
+  --first-text-color:whitesmoke;
+  --second-text-color:whitesmoke;
+  --third-text-color:whitesmoke;
+}
+
+.light-theme{
+  --main-theme-color:#328fdb;
+  --main-background-color:#f1f5f8;
+  --secondary-background-color:whitesmoke;
+  --third-background-color:white;
+  --first-text-color:black;
+  --second-text-color:#324d67;
+  --third-text-color:whitesmoke;
+
+}

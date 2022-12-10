@@ -1,8 +1,9 @@
 .form-sec{
     min-width:200px;
     padding:1rem;
-    background: white;
+    background: var( --third-background-color);
     border-radius: .5rem;
+    box-shadow:  0 5px 15px #294455;
 
 }
 
@@ -17,6 +18,7 @@
 .form-content h1{
     font-size: 2.5rem;
     padding-bottom:2rem;
+    color:var(--first-text-color);
 }
 
 
@@ -29,10 +31,10 @@
 }
 
 .form-content div label {
-    color:#324d67;
+    color:var(--second-text-color);
     font-weight: 500;
     font-size:1.2rem;
-    padding-bottom: .3rem;
+    padding-bottom: .5rem;
 }
 
 .form-content div select{

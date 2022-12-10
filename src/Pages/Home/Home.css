@@ -1,5 +1,5 @@
 .home-page{
-    background:#f1f5f8;
+    background:var( --main-background-color);
     min-height:100vh;
     display: flex;
     justify-content: center;

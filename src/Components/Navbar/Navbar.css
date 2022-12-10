@@ -8,7 +8,7 @@
     left: 0px;
     width:100%;
     z-index:10;
-    background:#f1f5f8;
+    background:var(--main-background-color);
     padding:2.5rem;
 }
 
@@ -21,9 +21,10 @@
 
 .Navbar h1{
     font-size:3rem;
+    color:var( --first-text-color);
 }
 .Navbar h1 span{
-    color:#328fdb;
+    color:var(--main-theme-color);
 }
 
 .Navigation{
@@ -35,16 +36,20 @@
 .Navigation i {
     font-size:2.7rem;
     padding-right:1.3rem;
-    color:black;
+    color: var(--first-text-color);
+}
+
+.Navigation i:hover{
+    color:var(--main-theme-color);
 }
 
 .Navigation button{
     padding: 1rem;
     border-radius: 5px;
-    background: #328fdb;
+    background: var(--main-theme-color);
     line-height: .3;
     font-size: 1.5rem;
-    color: aliceblue;
+    color:  var(--third-text-color);
     letter-spacing: .1rem;
     text-align: center;
     border:none;

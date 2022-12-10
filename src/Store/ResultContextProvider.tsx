@@ -18,7 +18,7 @@ const ResultContextProvider:React.FC <{ children: React.ReactNode }>=(props) => 
        else{
         tempResult = [...result,resultData];
        }
-       console.log(tempResult);
+      //  console.log(tempResult);
         setResult(tempResult);
     }
 

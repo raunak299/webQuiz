@@ -47,7 +47,7 @@ export const AuthContextProvider:React.FC <{ children: React.ReactNode }> = (pro
         navigateOnLoginHandler(from.pathname);
     }
     catch(error){
-      console.log(error);
+      // console.log(error);
     }
   }
 
@@ -65,7 +65,7 @@ export const AuthContextProvider:React.FC <{ children: React.ReactNode }> = (pro
      navigateOnLoginHandler(from.pathname);
    }
    catch(error:any){
-     console.log(error.message);
+    //  console.log(error.message);
    }
   }
 

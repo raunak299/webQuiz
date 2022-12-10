@@ -1,6 +1,6 @@
 .dashboard-page{
     min-height:100vh;
-    background:#f1f5f8;
+    background:var(--main-background-color);
 }
 
 .dashboard-sec{
@@ -13,6 +13,7 @@
 
 .dashboard-sec h1{
     padding-bottom: 3rem;
+    color:var(--first-text-color);
 }
 
 
