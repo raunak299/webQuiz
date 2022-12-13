@@ -19,7 +19,7 @@
 .profile-info-sec div button {
     padding: 1rem;
     border-radius: 5px;
-    background: #328fdb;
+    background: var(--main-theme-color);
     line-height: .3;
     font-size: 1.2rem;
     color: aliceblue;

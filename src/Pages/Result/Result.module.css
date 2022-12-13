@@ -13,7 +13,7 @@
 
 .result-page h3{
    margin-top:1rem;
-   color:#328fdb
+   color:ver(--main-theme-color)
 }
 
 .question-sec{
@@ -44,10 +44,10 @@
 .options{
 padding: .5rem;
 border-radius: 5px;
-background:  #8bcbf9;
+background:  var(--main-theme-color);
 /* buttonne-height: .3; */
 font-size: .9rem;
-color: #252f38;
+color: white;
 letter-spacing: .1rem;
 text-align: center;
 border:none;

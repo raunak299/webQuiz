@@ -20,7 +20,7 @@
     border-top-style: solid;
     border-width: 6px;
     border-color: var(--main-theme-color);
-    box-shadow:  0 5px 15px #294455;
+    box-shadow:  0 5px 15px #14234b;
 }
 
 .auth-modal h2{
@@ -85,8 +85,8 @@ font-size: 1rem;
 }
 
 .auth-modal button:nth-child(2){
-    background: #a9d9fe;
-    color:black
+    background: #3b82f6;
+    color:white
 }
 
 .auth-modal button:nth-child(2):hover{
